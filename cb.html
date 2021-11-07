@@ -1,0 +1,18 @@
+<body>
+    <text id='txt'>这是想要复制的文字</text>
+</body>
+<script>
+    document.getElementById("txt").innerHTML = 'text';
+    const clipboardObj = navigator.clipboard;
+    (async () => {
+      const text = await navigator.clipboard.readText();
+      console.log(text);
+      document.getElementById("txt").innerHTML = text;
+    })();
+</script>
+<style>
+    .summary_context{
+        text-decoration:none;
+        border:0;
+    }
+</style>
